@@ -1,0 +1,99 @@
+* {
+    color: blue;
+}
+
+li {
+    font-weight: bold;
+    color: rgba(108, 108, 17, 0.635);
+}
+
+.formulario {
+    /* o input[type] */
+    border-color: red;
+    width: 500px;
+    margin-top: 70px;
+    margin-bottom: 5px;
+
+}
+
+input[type="number"] {
+    /* o input[type] */
+    border-color: rgb(93, 210, 51);
+    width: 50px;
+}
+
+#importante1 {
+    color: rgb(236, 91, 91);
+    font-weight: bold;
+}
+
+#importante2 {
+    color: rgba(128, 41, 168, 0.226);
+    font-weight: bold;
+}
+
+#importante3 {
+    color: rgba(25, 196, 40, 0.226);
+    font-weight: bold;
+}
+
+#importante4 {
+    color: rgba(203, 147, 49, 0.226);
+    font-weight: bold;
+}
+
+[id*="p"] {
+    color: orange;
+}
+
+.contenido>h3
+
+/* contenido > h3  contenido h3 Hijos independientemente si es directo o no */
+    {
+    color: purple;
+}
+
+.hermano1+h3
+
+/* + Hermano siguiente ~ todos los hermanos */
+    {
+    color: red;
+    border-color: violet;
+}
+
+/* Etiquetas que estan al mismo nivel */
+
+.contenido {
+    border: 2px solid red;
+    margin: 15px;
+    padding-top: 30px;
+}
+
+#tareas {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+#tareas>p {
+    border: 2px solid salmon;
+    margin: 5px;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #fff;
+    background-color: orange;
+    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+}
+
+.accordion-body {
+    font-size: 25px;
+    color: black;
+
+    strong {
+        color: purple!important;
+    }
+}
+.row{
+    border: 2px solid red;
+}
