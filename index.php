@@ -113,6 +113,23 @@
     if(!$membresia){
         echo "La persona tiene membresia" . $espacio;
     }
+
+
+    $contador = 0;
+
+    while($contador < 5){
+        echo $contador.$espacio;
+        $contador++;
+    }
+
+    do{
+        $contador++;
+        echo $contador.$espacio;
+    } while($contador < 5);
+
+    for($i = 10; $i > 0; $i--){
+        echo $i.$espacio;
+    }
     ?>
 </body>
 
