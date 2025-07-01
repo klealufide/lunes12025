@@ -7,8 +7,9 @@
 </head>
 
 <body>
-    <h1>Semana 06</h1>
+    <h1>Unidad 4</h1>
     <?php
+    /*
     echo "<h2>Clases de php </h2>";
 
     $nombre = "Karol Leal";
@@ -129,6 +130,53 @@
 
     for($i = 10; $i > 0; $i--){
         echo $i.$espacio;
+    }
+    */
+    // segunda parte Unidad 4
+
+    $arreglo = array("banano", "fresa");
+
+    array_push($arreglo, "papaya", "melon");
+
+    $posicion = array_search("melon", $arreglo);
+    echo $posicion . " esta melon sin for";
+
+    // cual es posicion de melon
+    $i = 0;
+    foreach ($arreglo as $item) {
+        if ($item == "melon") {
+            echo $i . " esta melon con for";
+            break;
+        }
+        $i++;
+    }
+
+
+    print_r($arreglo);
+
+    $persona = ["nombre" => "Karol", "apellido" => "Leal", "edad" => 35, "esEstudiante" => false];
+    $persona2 = ["nombre" => "Tatiana", "apellido" => "Rojas", "edad" => 36, "esEstudiante" => false];
+    print_r($persona);
+
+    if ($persona["esEstudiante"]) {
+        echo $persona["nombre"] . " es estudiante<br>";
+    } else {
+        echo $persona["nombre"] . " no es estudiante<br>";
+    }
+
+    $listaPersona = [$persona, $persona2];
+
+    echo "<br><br>";
+    print_r($listaPersona);
+
+    echo $listaPersona[0]["edad"];
+    echo "<br><br>";
+    foreach ($listaPersona as $elementoPersona) {
+        echo $elementoPersona["edad"] . "";
+        if ($elementoPersona["edad"] > 35) {
+            echo "La persona " . $elementoPersona["apellido"] . " tiene mas de 35 ahnos";
+        }
+        echo "<br><br>";
     }
     ?>
 </body>
