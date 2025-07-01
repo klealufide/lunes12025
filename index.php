@@ -178,7 +178,56 @@
         }
         echo "<br><br>";
     }
+
+
+    function sumar($a, $b)
+    {
+        echo $a + $b;
+    }
+
+    sumar(5, 6);
+
+    $sumar1 = function ($a, $b) {
+        return $a + $b;
+    };
+    echo "<br><br>";
+    echo $sumar1(4, 5);
+
+    $duplicar = fn($n) => $n * 2;
+    echo "<br><br>";
+    echo $duplicar(4);
+
+    $saludo = "Hola Mundo!";
+    echo "<br><br>";
+    echo str_replace("o", "0", $saludo);
+
+    /*
+    $archivo = fopen("archivo.txt","w");
+    $txt = "Hola Mundo!";
+
+    fwrite($archivo, $txt);
+
+    fclose($archivo);
+    */
+
+    $archivo = fopen("archivo.txt","r");
+
+    while(!feof($archivo)){
+        echo fgets($archivo)."<br>";
+    }
+    fclose($archivo);
+
+    session_start();
+
+    print_r($_SESSION);
+
+    $_SESSION["usuario"] = "kleal";
+    $_SESSION["rol"] = "admin";
+    $_SESSION["esEstudiante"] = false;
+
+    print_r($_SESSION);
     ?>
+    <a href="sesion.php">Ir a sesion</a>
 </body>
 
 </html>
