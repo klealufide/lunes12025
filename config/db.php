@@ -52,3 +52,4 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error al eliminar al usuario" . $conn->error . $espacio;
 }
+
