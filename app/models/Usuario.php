@@ -22,4 +22,20 @@ class Usuario
     }
 
 
+    public static function register($data): bool
+    {
+        global $conn;
+
+        try {
+            $sql = "INSERT INTO usuarios( usuario, nombre, rol, clave) VALUES ('" . $data["usuario"] . "','" . $data["nombre"] . "','" . $data["rol"] . "','" . $data["clave"] . "')";
+            if ($conn->query($sql) === TRUE) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (mysqli_sql_exception $e) {
+            return -1;
+        }
+    }
 }

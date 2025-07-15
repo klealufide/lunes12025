@@ -3,7 +3,7 @@
 $server = "localhost";
 $username = "root";
 $password = "root";
-$database = "matricula";
+$database = "biblioteca";
 
 
 $conn = new mysqli($server, $username, $password, $database);
@@ -25,7 +25,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error al agregar al usuario".$conn->error . $espacio;
 }
     */
-
+/*
 $sql = "SELECT * FROM usuario";
 $result = $conn->query($sql);
 
@@ -52,4 +52,4 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error al eliminar al usuario" . $conn->error . $espacio;
 }
-
+*/
