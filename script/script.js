@@ -2,9 +2,6 @@ $(function () {
     let tituloJS = document.getElementById("titulo");
     console.log(tituloJS);
 
-    let tituloJquery = $("#titulo");
-    tituloJquery.text("Semana 10 - Unidad 6");
-    console.log(tituloJquery);
 
     let selectorClass = $(".grupo2");
 
@@ -29,5 +26,31 @@ $(function () {
 */
     $("#btnSaludo").on("click", function () {
         alert("Hola a todos!.");
+        let tituloJquery = $("#titulo");
+        tituloJquery.text("Semana 10 - Unidad 6");
+        console.log(tituloJquery);
+        //tituloJquery.css("color", "red");
+        tituloJquery.css("fontSize", "20px");
+        tituloJquery.addClass("grupo3");
+
+        $(".grupo2").removeClass("grupo2");
+    });
+
+
+    $("#btnEnviar").on("click", function () {
+        let nombre = $("#name").val();
+        if (nombre == "") {
+            $("#name").addClass("error");
+        } else {
+            $("#name").removeClass("error");
+        }
+    });
+
+    $("img").on("mouseenter", function () {
+        $("img").attr("src", "img/img1.jpg")
+    });
+
+    $("img").on("mouseleave", function () {
+        $("img").attr("src", "img/biblioteca.jpg")
     });
 });
