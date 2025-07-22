@@ -62,6 +62,9 @@ $(function () {
     $("#desvanecer").on("click", function () {
         $("#cuadrado").fadeOut(2000);
     });
+    $("#toggle").on("click", function () {
+        $("#cuadrado").toggleClass("morado");
+    });
     $("#crecer").on("click", function () {
         $("#cuadrado").animate({
             width: '200px',
@@ -82,7 +85,7 @@ $(function () {
         if (tarea.val() != "") {
             tarea.removeClass("error");
             // $("#listaTareas").append("<li>" + tarea.val() + "</li>"); agrega al final
-             $("#listaTareas").prepend("<li>" + tarea.val() + "</li>"); //agrega al inicip
+            $("#listaTareas").prepend("<li>" + tarea.val() + "</li>"); //agrega al inicip
             tarea.val("");
             $("#mensaje").hide();
         } else {
