@@ -5,6 +5,8 @@ $(function () {
 
     let selectorClass = $(".grupo2");
 
+    $("#mensaje").hide();
+
     console.log(selectorClass);
 
     let selectorElemento = $("h3");
@@ -13,7 +15,7 @@ $(function () {
 
     let hijosID = $("#listaTareas > li");
 
-    hijosID.html("<b>li</b>")
+    //hijosID.html("<b>li</b>")
     console.log(hijosID);
 
     let selectorMultiple = $(".grupo2, #titulo, li");
@@ -74,4 +76,18 @@ $(function () {
             opacity: 1
         });
     });
+
+    $("#btnAgregarTarea").on("click", function () {
+        let tarea = $("#tarea");
+        if (tarea.val() != "") {
+            tarea.removeClass("error");
+            // $("#listaTareas").append("<li>" + tarea.val() + "</li>"); agrega al final
+             $("#listaTareas").prepend("<li>" + tarea.val() + "</li>"); //agrega al inicip
+            tarea.val("");
+            $("#mensaje").hide();
+        } else {
+            $("#mensaje").show();
+            tarea.addClass("error");
+        }
+    })
 });
