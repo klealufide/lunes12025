@@ -53,4 +53,25 @@ $(function () {
     $("img").on("mouseleave", function () {
         $("img").attr("src", "img/biblioteca.jpg")
     });
+
+    $("#mostrar").on("click", function () {
+        $("#cuadrado").fadeIn(2000);
+    });
+    $("#desvanecer").on("click", function () {
+        $("#cuadrado").fadeOut(2000);
+    });
+    $("#crecer").on("click", function () {
+        $("#cuadrado").animate({
+            width: '200px',
+            height: '200px',
+            opacity: 0.5
+        });
+    });
+    $("#original").on("click", function () {
+        $("#cuadrado").animate({
+            width: '100px',
+            height: '100px',
+            opacity: 1
+        });
+    });
 });
