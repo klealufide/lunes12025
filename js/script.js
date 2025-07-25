@@ -10,7 +10,7 @@ $(function () {
     function getMenu() {
         $("#menu").empty().append("<h2>Menu del dia</h2>");
         menu.forEach((plato) => {
-            $("#menu").append('<div class="card"><h3>' + plato.nombre + "</h3><p>Precio: " + plato.precio + "</p><button class='agregar' id='btnAgregar' data-id='" + plato.id + "'>Agregar</button></div>"
+            $("#menu").append('<div class="card"><h3>' + plato.nombre + "</h3><p>Precio: " + plato.precio + "</p><button class='agregar' data-id='" + plato.id + "'>Agregar</button></div>"
             );
         })
     }
