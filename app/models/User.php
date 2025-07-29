@@ -1,5 +1,5 @@
 <?php
-require_once 'config/database.php';
+require_once 'app/config/db.php';
 
 class User {
     private $db;
@@ -22,6 +22,8 @@ class User {
         $result = $stmt->get_result()->fetch_assoc();
 
         if ($result && password_verify($password, $result['password'])) {
+            session_start();
+            $_SESSION["username"] = $username;
             return true;
         }
         return false;
