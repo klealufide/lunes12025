@@ -36,4 +36,48 @@ $(function () {
         })
         $("#total").text(total);
     }
+
+    $('#loginForm').submit(function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: '../app/router.php?action=login',
+            method: 'POST',
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function (response) {
+                if (response.status === 'success') {
+                    $('#loginResult').text('Login Okay');
+                } else {
+                    $('#loginResult').text(response.message || 'Error en el login');
+                }
+            },
+            error: function () {
+                $('#loginResult').text('Error de conexión con el servidor');
+            }
+        });
+    });
+
+  
+    $('#registerForm').submit(function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: '../app/router.php?action=register',
+            method: 'POST',
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function (response) {
+                if (response.status === 'success') {
+                    $('#registerResult').text('Se registro correctamente');
+                    $('#registerForm')[0].reset();
+                } else {
+                    $('#registerResult').text(response.message || 'Error en el registro');
+                }
+            },
+            error: function () {
+                $('#registerResult').text('Error de conexión con el servidor');
+            }
+        });
+    });
 });
